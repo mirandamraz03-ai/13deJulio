@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles2.css" />
+</head>
+
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Colección personal</p>
+        <h1>Holaaa</h1>
+        <p class="hero-text">
+          No sé si las personas pueden conocerse a través de canciones, pero me gusta pensar que sí. Así que, 
+          de alguna forma, aquí hay pequeños pedazos de mí. Algunas hablan por mí, otras solo me encontraron 
+          en el momento correcto. No espero que todas te gusten, solo que alguna, en el momento indicado, 
+          también encuentre un lugar en ti.
+          Son 27 canciones. Una por cada año de vida. 7w7
+        </p>
+      </div>
+
+      <div class="album-card" aria-label="Portada del álbum">
+        <div class="album-disc">
+          <div class="disc-inner">
+            <img id="cover-image" src="portada/Vinilo2.png" />
+          </div>
+        </div>
+        
+        <div class="album-message">
+          <p id="song-message">
+            Aquí aparecerá el mensaje de la canción.
+          </p>
+        </div>
+      </div>
+      <section class="player-card" aria-label="Reproductor">
+        <div class="player-info">
+          <p class="eyebrow">Reproduciendo ahora</p>
+          <h3 id="current-title">Hoy en tu cumpleaños</h3>
+          <p id="current-artist">Fernando Delgadillo</p>
+        </div>
+
+        <div class="transport-controls" aria-label="Controles de reproducción">
+          <button class="transport-button" id="prev-btn" type="button" aria-label="Canción anterior">⟨⟨</button>
+          <button class="transport-button transport-button--primary" id="play-btn" type="button"
+            aria-label="Reproducir o pausar">▶</button>
+          <button class="transport-button" id="next-btn" type="button" aria-label="Siguiente canción">⟩⟩</button>
+        </div>
+
+        <div class="progress-row">
+          <span id="current-time">0:00</span>
+          <input id="progress" class="progress-bar" type="range" min="0" max="100" value="0"
+            aria-label="Progreso de reproducción" />
+          <span id="duration">0:00</span>
+          <div class="volume-container">
+            <span>🔈</span>
+            <input id="volume" class="progress-bar" type="range" min="0" max="1" step="0.1" value="1"
+              aria-label="Control de volumen" />
+          </div>
+        </div>
+        <a id="youtube-link" class="ghost-button ghost-button--link"
+          href="https://youtu.be/8GUXb0vpPrA?si=OCRlL__b7gZ14XIo" target="_blank" rel="noreferrer">Abrir en YouTube</a>
+      </section>
+      <button class="ghost-button" type="button" onclick="window.location.href='index.html'">
+        Wiped out!
+      </button>
+    </section>
+
+    <section class="library-panel" aria-labelledby="library-title">
+      <div class="library-header">
+        <div>
+          <p class="eyebrow">Biblioteca</p>
+          <h2 id="library-title">Canciones</h2>
+        </div>
+      </div>
+
+      <div class="song-list" role="list" aria-label="Canciones disponibles">
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Hoy en Tu Cumpleaños.flac"
+          data-title="Hoy en Tu Cumpleaños" data-artist="Fernando Dellgadillo" data-duration="" data-cover=""
+          data-message="Esta canción me recuerda que hay personas que merecen ser celebradas simplemente por existir. Espero que cuando la escuches te saque una sonrisa."
+          data-youtube-url="https://youtu.be/jpPmCaoDaqs?si=pRzDAgXwCuL_gTi4">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Hoy en Tu Cumpleaños</strong>
+            <span>Fernando Delgadillo</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row is-active" type="button" role="listitem" data-audio-src="audio/7 VIDAS.flac"
+          data-title="7 VIDAS" data-artist="Brock Ansiolitiko" data-duration="" data-cover=""
+          data-message="A veces puedes entregar absolutamente todo y, aun así, no ser suficiente para la persona equivocada. Y eso no significa que tú seas el problema."
+          data-youtube-url="https://youtu.be/8GUXb0vpPrA?si=OCRlL__b7gZ14XIo">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>7 VIDAS</strong>
+            <span>Brock Ansiolitiko</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/A Donde Va El Viento.flac"
+          data-title="A Donde Va El Viento" data-artist="Julieta Venegas" data-duration="" data-cover=""
+          data-message="Me gusta porque me recuerda que hay lugares, personas y momentos que extrañamos, pero volver no siempre significa recuperar lo que fue. Nosotros tampoco somos los mismos."
+          data-youtube-url="https://youtu.be/pw8z12mhpAM?si=5Nh6LwIhm4djkv1t">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>A Donde Va El Viento</strong>
+            <span>Julieta Venegas</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Billy Joel - Vienna.flac"
+          data-title="Vienna" data-artist="Billy Joel" data-duration="" data-cover=""
+          data-message="A veces olvidamos que no existe un premio por llegar primero. Esta canción es un recordatorio de que también está bien detenerse, respirar y confiar en que las cosas llegarán cuando tengan que llegar."
+          data-youtube-url="https://youtu.be/y6lO6aia3go?si=lyV6yvQUZxm0nvkW">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Vienna</strong>
+            <span>Billy Joel</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Bruses - FBI.flac" data-title="FBI"
+          data-artist="Bruses" data-duration="" data-cover=""
+          data-message="No habla de olvidar de un día para otro, sino de seguir caminando, incluso con el peso de lo que ya fue. Al final, hay personas cuya mejor versión es la que dejaron atrás."
+          data-youtube-url="https://youtu.be/d5s99WWYyPk?si=nBD2F9xOAFhKZWqY">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>FBI</strong>
+            <span>Bruses</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Califórnica.flac"
+          data-title="Califórnica" data-artist="La gusana ciega" data-duration="" data-cover=""
+          data-message="Esta me atrapó por una sola estrofa: Quiero clavar mis colmillos en tu carne morena... pero dicen que nadie te puede tocar. No hay mucho misterio, simplemente me encanta esa parte."
+          data-youtube-url="https://youtu.be/i2OOruTFi80?si=rRHGh66Zpa7c8KMe">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Califórnica</strong>
+            <span>La gusana ciega</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/DAAZ - 11 de 10.flac"
+          data-title="11 de 10" data-artist="DAAZ" data-duration="" data-cover=""
+          data-message="Daaz es muy directo en su canciones, no hay explicación, disfrutala"
+          data-youtube-url="https://youtu.be/8MZb91AWMuk?si=aE01HzHcFDSVEm_Q">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>11 de 10</strong>
+            <span>DAAZ</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/DAAZ - Chance.flac"
+          data-title="Chance" data-artist="DAAZ" data-duration="" data-cover=""
+          data-message="Esta canción habla de esas posibilidades que nunca terminan de morir, de las historias que quizá no existen todavía, pero que uno sigue imaginando."
+          data-youtube-url="https://youtu.be/U9vFC3WoUhg?si=GOdDzkz0IzYRF8Dn">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Chance</strong>
+            <span>DAAZ</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Dejate de cuentos.flac"
+          data-title="DÉJATE DE CUENTOS" data-artist="Brock Ansiolitiko" data-duration="" data-cover=""
+          data-message="Hace muchas referencias a Disney. Quizá algún día me conozcas un poco mejor y entiendas por qué me gustan tanto las canciones que cuentan historias de esa manera. Espero que también te guste."
+          data-youtube-url="https://youtu.be/-UIc417B9Ww?si=EKIumAPcFZ9nGHCZ">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>DÉJATE DE CUENTOS</strong>
+            <span>Brock Ansiolitiko</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Enamorado tuyo.flac"
+          data-title="Enamorado tuyo" data-artist="El cuarteto de nos" data-duration="" data-cover=""
+          data-message="Si alguien pregunta... no estoy enamorada."
+          data-youtube-url="https://youtu.be/R5cbxTPZNL0?si=8mQXY3stPP23VtYu">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Enamorado tuyo</strong>
+            <span>El cuarteto de nos</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/Fernando Delgadillo - Hoy Ten Miedo De Mí.flac" data-title="Hoy Ten Miedo De Mí"
+          data-artist="Fernando Delgadillo" data-duration="" data-cover=""
+          data-message="Me encanta enseñársela a mis amigos porque suena tranquila y armoniosa. Básicamente dice: Te amo tanto que deberías tenerme miedo, porque soy demasiado cobarde para decirlo... hasta que un día mis impulsos me ganen."
+          data-youtube-url="https://youtu.be/5u8utPO4a9o?si=xX6tKfsgU-WPMShF">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Hoy Ten Miedo De Mí</strong>
+            <span>Fernando Delgadillo</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/I wanna be your slave.flac"
+          data-title="I Wanna Be Your Slave" data-artist="Måneskin, Kaia Lana" data-duration="" data-cover=""
+          data-message="Esta es una joya de Maneskin pero la version en español que hizo esta chica me gusta mucho, solo es una recomendacion."
+          data-youtube-url="https://youtu.be/-lIf2Hl7SLM?si=8RxYMzXD2ME18ZTP">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>I Wanna Be Your Slave</strong>
+            <span>Måneskin, Kaia Lana</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/La La Love You, Axolotes Mexicanos - El Fin Del Mundo.flac"
+          data-title="El Fin Del Mundo" data-artist="La La Love You, Axolotes Mexicanos" data-duration="" data-cover=""
+          data-message="Este fue mi descubrimiento del mes. No tengo una explicación profunda: simplemente el ritmo me atrapó."
+          data-youtube-url="https://youtu.be/6ZqnmYxXquU?si=cRPbDL_31Vv0-xnu">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>El Fin Del Mundo</strong>
+            <span>La La Love You, Axolotes Mexicanos</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Lasso - Te Veo.flac"
+          data-title="Te Veo" data-artist="Lasso" data-duration="" data-cover=""
+          data-message="Habla de amar tanto a alguien que, incluso sabiendo cómo termina la historia, volverías a elegir vivirla exactamente igual."
+          data-youtube-url="https://youtu.be/BWZsP6nc8Fs?si=-tVs0KNB3ZuUiLxz">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Te Veo</strong>
+            <span>Lasso</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/No me pidas ser tu amigo.flac" data-title="No me pidas ser tu amigo"
+          data-artist="Fernando Delgadillo" data-duration="" data-cover=""
+          data-message="Recomiendo que abras el video en youtube y escuches la historia."
+          data-youtube-url="https://youtu.be/CA60fL3heXU?si=HVXjRJT9-m9MHFC6">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>No me pidas ser tu amigo</strong>
+            <span>Fernando Delgadillo</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Los Caligaris - Kilometros.flac"
+          data-title="Kilometros" data-artist="Los Caligaris" data-duration="" data-cover=""
+          data-message="Te juro que cada que la escucho en mi mente aparece el pato bailando."
+          data-youtube-url="https://youtu.be/pW9MJdTnl5E?si=1nCtL9KwcgwozBYq">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Kilometros</strong>
+            <span>Los Caligaris</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/MI Sobrino Memo - 25 Canciones Para Personas Tristes.flac"
+          data-title="25 Canciones Para Personas Tristes" data-artist="Mi Sobrino Memo" data-duration="" data-cover=""
+          data-message="Es un popurrí. Mi parte favorita empieza en el minuto 3:00; la primera vez me tomó completamente por sorpresa."
+          data-youtube-url="https://youtu.be/EwanrCO47Io?si=91USTrkBMPtOhq9q">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>25 Canciones Para Personas Tristes</strong>
+            <span>Mi Sobrino Memo</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Miranda! - Mentía.flac"
+          data-title="Mentía" data-artist="Miranda!" data-duration="" data-cover=""
+          data-message="No tengo una explicación elegante. Simplemente es una gran canción"
+          data-youtube-url="https://youtu.be/fIhyOeMGQN4?si=2O1qKFTjnomPNDtL">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Mentía</strong>
+            <span>Miranda!</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/Miranda! - Tu misterioso alguien.flac" data-title="Tu misterioso alguien"
+          data-artist="Miranda!" data-duration="" data-cover=""
+          data-message="Si algún día alguien más llegara a robarte el corazón, creo que preferiría no saber quién fue. Hay misterios que duelen menos cuando siguen siendo misterios."
+          data-youtube-url="https://youtu.be/ETJcV3rPO_U?si=_Ys91EFUpEhHVM6D">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Tu misterioso alguien</strong>
+            <span>Miranda!</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Orión - 1001.flac"
+          data-title="1001" data-artist="Orión" data-duration="" data-cover=""
+          data-message="Describe muy bien cómo me siento cuando alguien me gusta. No importa si es la peor idea posible; aun así, quiero ser ese '1001'."
+          data-youtube-url="https://youtu.be/VezpS0-IX5E?si=K0R2i1CVLkbtYH6N">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>1001</strong>
+            <span>Orión</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Quién Fuera.flac"
+          data-title="Quién Fuera" data-artist="Silvio Rodriguez" data-duration="" data-cover=""
+          data-message="Me gusta por todo lo que dice entre líneas. Cada verso parece hablar de algo distinto y, al mismo tiempo, de lo mismo. A veces me gusta imaginarla como el deseo de convertirse en alguien digno de ser recordado."
+          data-youtube-url="https://youtu.be/sOLG_l9sJPM?si=kXpQ9SIgna8NcwGF">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Quién Fuera</strong>
+            <span>Silvio Rodriguez</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/RENEE - Nunca Tristes.flac"
+          data-title="Nunca Tristes" data-artist="RENEE" data-duration="" data-cover=""
+          data-message="Tiene algo de rebeldía y mucho de esas ganas de dejar de sobrevivir y empezar a disfrutar la vida."
+          data-youtube-url="https://youtu.be/mQHWzvnkqt4?si=FEP5WhVESMUfqV9Z">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Nunca Tristes</strong>
+            <span>RENEE</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/sundial - 24.flac" data-title="24"
+          data-artist="sundial" data-duration="" data-cover=""
+          data-message="Crecer también significa descubrir que no siempre tendremos respuestas y que habrá días en los que simplemente sobrevivir ya es suficiente."
+          data-youtube-url="https://youtu.be/tg4ztGNTlFQ?si=XCvSSd9kyqCj3VQP">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>24</strong>
+            <span>sundial</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Supermercado.flac"
+          data-title="Supermercado" data-artist="Alejandrina" data-duration="" data-cover=""
+          data-message="Me encanta el sonido de la guitarra. Me recuerda lo sencillo que podría ser todo si dejáramos de vivir a la defensiva y bajáramos las armas que cargamos por miedo."
+          data-youtube-url="https://youtu.be/X9Dc36hH1KQ?si=PNicYawA5vHuwKL6">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Supermercado</strong>
+            <span>Alejandrina</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/The Police - Every Breath You Take.flac" data-title="Every Breath You Take"
+          data-artist="The Police" data-duration="" data-cover=""
+          data-message="Muchos la escuchan como una canción romántica, pero en realidad es una mirada inquietante a la obsesión. Habla de alguien incapaz de aceptar una despedida, que convierte el recuerdo en vigilancia y el amor en una necesidad de controlar."
+          data-youtube-url="https://youtu.be/OMOGaugKpzs?si=iLGZWXCWAzHMa2bR">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Every Breath You Take</strong>
+            <span>The Police</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/Twisted Sister - We're Not Gonna Take It.flac" data-title="We're Not Gonna Take It"
+          data-artist="Twisted Sister" data-duration="" data-cover=""
+          data-message="Aparece en My Metal Family. Es una canción rebelde, llena de energía y con esa idea simple de que, al final, somos libres."
+          data-youtube-url="https://youtu.be/SxplLyMNCOw?si=f964v4fdU9HsAYRt">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>We're Not Gonna Take It</strong>
+            <span>Twisted Sister</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/Ves Tal Vez - Algo En Ti.flac"
+          data-title="Algo En Ti" data-artist="Ves Tal Vez" data-duration="" data-cover=""
+          data-message="Sí... definitivamente hay algo en ti. ♥"
+          data-youtube-url="https://youtu.be/5bqQcS5EIRI?si=0Hrg0mZWpQnpNu8Y">
+          <span class="play-icon" aria-hidden="true"></span>
+          <div class="song-info">
+            <strong>Algo En Ti</strong>
+            <span>Ves Tal Vez</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+      </div>
+    </section>
+  </main>
+
+  <audio id="player" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

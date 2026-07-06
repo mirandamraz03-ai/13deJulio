@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Hola David</p>
+        <h1>Wiped Out!</h1>
+        <p class="hero-text">
+          Se que es tu album favorito y quería regalarte algo que te fuera a gustar
+        </p>
+      </div>
+
+      <div class="album-card" aria-label="Portada del álbum">
+        <div class="album-disc">
+          <div class="disc-inner">
+            <img id="cover-image" src="portada/Vinilo.png" />
+          </div>
+        </div>
+        <div class="album-meta">
+          <p class="album-label"></p>
+          <h2 id="album-title">A Moment of Silence</h2>
+          <p id="album-artist">The Neighbourhood</p>
+        </div>
+      </div>
+      <section class="player-card" aria-label="Reproductor">
+        <div class="player-info">
+          <p class="eyebrow">Reproduciendo ahora</p>
+          <h3 id="current-title">A Moment of Silence</h3>
+          <p id="current-artist">The Neighbourhood</p>
+        </div>
+
+        <div class="transport-controls" aria-label="Controles de reproducción">
+          <button class="transport-button" id="prev-btn" type="button" aria-label="Canción anterior">⟨⟨</button>
+          <button class="transport-button transport-button--primary" id="play-btn" type="button"
+            aria-label="Reproducir o pausar">▶</button>
+          <button class="transport-button" id="next-btn" type="button" aria-label="Siguiente canción">⟩⟩</button>
+        </div>
+
+        <div class="progress-row">
+          <span id="current-time">0:00</span>
+          <input id="progress" class="progress-bar" type="range" min="0" max="100" value="0"
+            aria-label="Progreso de reproducción" />
+          <span id="duration">0:00</span>
+          <div class="volume-container">
+            <span>🔈</span>
+            <input id="volume" class="progress-bar" type="range" min="0" max="1" step="0.1" value="1"
+              aria-label="Control de volumen" />
+          </div>
+        </div>
+        <a id="youtube-link" class="ghost-button ghost-button--link"
+          href="https://youtu.be/X_MJi2JZT9Y?si=LZOxs-9jnB7cyAii" target="_blank" rel="noreferrer">Abrir en YouTube</a>
+      </section>
+      <button class="ghost-button" type="button" onclick="window.location.href='index2.html'">
+        Colección para ti
+      </button>
+    </section>
+
+    <section class="library-panel" aria-labelledby="library-title">
+      <div class="library-header">
+        <div>
+          <p class="eyebrow">Biblioteca</p>
+          <h2 id="library-title">Canciones</h2>
+        </div>
+      </div>
+
+      <div class="song-list" role="list" aria-label="Canciones disponibles">
+
+        <button class="song-row is-active" type="button" role="listitem"
+          data-audio-src="audio/01 - A Moment of Silence.flac" data-title="A Moment of Silence"
+          data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/X_MJi2JZT9Y?si=LZOxs-9jnB7cyAii">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>A Moment of Silence</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/02 - Prey.flac" data-title="Prey"
+          data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/2IE3T9mcqyM?si=kcVaIrD9ECGJUx4r">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Prey</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/03 - Cry Baby.flac"
+          data-title="Cry Baby" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/r4LGe12tNR8?si=oYWPxXBeQCHHmG9L">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Cry Baby</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/04 - Wiped Out!.flac"
+          data-title="Wiped Out!" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/Z3UCVQIjAJ8?si=EQxbtlF7-bE2CV-W">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Wiped Out!</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/05 - The Beach.flac"
+          data-title="The Beach" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/DujKJ1OaLQE?si=FPn8JjN-559nMz6W">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>The Beach</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/06 - Daddy Issues.flac"
+          data-title="Daddy Issues" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/_lMlsPQJs6U?si=nh6zydv7W_WUyDfO">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Daddy Issues</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/07 - Baby Came Home 2 + Valentines.flac" data-title="Baby Came Home 2 + Valentines"
+          data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/Y1INLCftBko?si=MyTrIibpLX4V5cPW">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Baby Came Home 2 + Valentines</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem"
+          data-audio-src="audio/08 - Greetings From Califournia.flac" data-title="Greetings From California"
+          data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/IH0Jb2yWpDA?si=b-KxC_NXCizscCBx">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Greetings From California</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/09 - Ferrari.flac"
+          data-title="Ferrari" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/IH0Jb2yWpDA?si=b-KxC_NXCizscCBx">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Ferrari</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/10 - Single.flac"
+          data-title="Single" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/jbmftUwstS8?si=qcjT_TL4IlT3vNXc">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>Single</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+        <button class="song-row" type="button" role="listitem" data-audio-src="audio/11 - R.I.P. 2 My Youth.flac"
+          data-title="R.I.P. 2 My Youth" data-artist="The Neighbourhood" data-duration="" data-cover=""
+          data-youtube-url="https://youtu.be/vKH-rcO6PA8?si=PG-aEHUIAWFCWy7N">
+          <span class="play-icon"></span>
+          <div class="song-info">
+            <strong>R.I.P. 2 My Youth</strong>
+            <span>The Neighbourhood</span>
+          </div>
+          <span class="song-time"></span>
+        </button>
+
+
+        
+      </div>
+    </section>
+  </main>
+
+  <audio id="player" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
